@@ -16,4 +16,3 @@ library(tidytext)
 articles_df <- articles_df %>%
   mutate(text = paste(title, body))
 
-
