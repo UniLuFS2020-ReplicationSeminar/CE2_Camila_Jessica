@@ -7,7 +7,7 @@ Contains original data obtained from the Guardian through the Guardian API and p
 #### 2. Figures: 
 Contains 4 figures, 3 plots and 1 wordcloud image.
 
-#### 3. scripts: contains the scripts: 
+#### 3. Scripts: contains the scripts: 
 
 **00_mentalhealth_articles** - contain the code with the steps of our data collection.
 
