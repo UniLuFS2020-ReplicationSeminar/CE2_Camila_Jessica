@@ -54,3 +54,4 @@ articles_df <- map_df(data$response$results, function(article) {
     author = coalesce(article$fields$byline, "")
   )
 }, .id = "article_id")
+

@@ -5,6 +5,10 @@
 # Date 03/05/2024
 # R version 4.3.1
 
+# Install packages
+install.packages("tidytext")
+library("tidytext")
+
 #------  sentiment analysis preparation
 # Load AFINN sentiment lexicon
 sentiments <- get_sentiments("afinn")
