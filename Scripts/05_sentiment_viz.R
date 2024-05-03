@@ -26,3 +26,12 @@ ggplot(sentiment_analysis, aes(x = author, y = sentiment_score, fill = sentiment
 # Save the plot
 ggsave("histogram.png", plot = , path = "/Applications/Working_Directory/IHRS/ihrs-hypothesis/CE2_Camila_Jessica/Figures", width = 10, height = 8, units = "in")
 
+# Load the rmarkdown package
+library(rmarkdown)
+
+# Specify the path to your RMarkdown file
+input_file <- "/Applications/Working_Directory/IHRS/ihrs-hypothesis/CE2_Camila_Jessica/Output/report.Rmd"
+
+# Render the RMarkdown document into an HTML file
+render(input_file)
+
