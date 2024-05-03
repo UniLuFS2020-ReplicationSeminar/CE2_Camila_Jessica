@@ -1,0 +1,58 @@
+---
+title: "Mental Health Sentiment Analysis"
+subtitle: "Class Exercise 2 - Data Mining in R"
+author: "Camila and Jessica"
+date: "2024-05-03"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+### Research Question
+
+Does the sentiment of mental health articles vary significantly between different authors?
+
+### Hypothesis
+
+We hypothesize that there will be a significant difference in sentiment scores among authors contributing to mental health articles.
+
+### Data Collection
+
+We collected articles related to mental health using the Guardian API, extracting fields such as title, body, and author.
+
+### Data Prep
+
+The text data was processed to lowercase, remove punctuation and digits.
+
+### Tokenization 
+The text was tokenized into individual words, and stop words were removed. We plot the results:
+
+**The most frequent words per author:**
+
+```{r, echo=FALSE}
+knitr::include_graphics("/Applications/Working_Directory/IHRS/ihrs-hypothesis/CE2_Camila_Jessica/Figures/word_freq_author.png")
+```
+
+**The word most frequent per author:**
+
+```{r, echo=FALSE}
+knitr::include_graphics("/Applications/Working_Directory/IHRS/ihrs-hypothesis/CE2_Camila_Jessica/Figures/word_freq_author2.png")
+```
+
+We also use Wordcloud to provide us a image of the most frequent words overall:
+
+```{r, echo=FALSE}
+knitr::include_graphics("/Applications/Working_Directory/IHRS/ihrs-hypothesis/CE2_Camila_Jessica/Figures/Wordcloud.png")
+```
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
