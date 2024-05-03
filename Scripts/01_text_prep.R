@@ -5,7 +5,7 @@
 # Date 03/05/2024
 # R version 4.3.1
 
-setwd("/Applications/Working_Directory/IHRS/ihrs-hypothesis/CE2_Camila_Jessica/Data/")
+setwd("/Applications/Working_Directory/IHRS/ihrs-hypothesis/CE2_Camila_Jessica/")
 source("mentalhealth_articles.R")
 
 # Text Preprocessing---------------------------------------------------------------
