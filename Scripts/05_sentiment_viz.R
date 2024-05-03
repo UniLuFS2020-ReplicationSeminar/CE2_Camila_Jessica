@@ -24,5 +24,5 @@ ggplot(sentiment_analysis, aes(x = author, y = sentiment_score, fill = sentiment
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
 # Save the plot
-ggsave("histogram.png", plot = , path = "CE2_Camila_Jessica/Figures", width = 10, height = 8, units = "in")
+ggsave("histogram.png", plot = , path = "/Applications/Working_Directory/IHRS/ihrs-hypothesis/CE2_Camila_Jessica/Figures", width = 10, height = 8, units = "in")
 
