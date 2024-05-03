@@ -6,18 +6,19 @@
 # R version 4.3.1
 
 # Install packages
-install.packages("tidytext")
+#install.packages("tidytext")
 library("tidytext")
 
-#------  sentiment analysis preparation
-# Load AFINN sentiment lexicon
+# Sentiment analysis preparation ---------------------------------------------------------------
+
 sentiments <- get_sentiments("afinn")
 
-# Join with sentiment lexicon
-sentiment_analysis <- words_df %>%
+sentiment_analysis <- word_df %>%
   inner_join(sentiments, by = "word") %>%
-  group_by(article_id) %>%
+  group_by(author) %>%
   summarize(sentiment_score = sum(value), .groups = 'drop')
 
-#-------------sentiment scores for each article
+# Sentiment scores for each article---------------------------------------------------------------
 print(sentiment_analysis)
+
+
