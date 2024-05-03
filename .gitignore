@@ -47,3 +47,14 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+#Ds Store
+.DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store
+=======
+*.csv/
+
+# API-Credentials
+api_credentials.csv
