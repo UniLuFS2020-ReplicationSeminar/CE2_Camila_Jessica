@@ -11,9 +11,9 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-### Research Question
+## Research Question
 
-Does the sentiment of mental health articles vary significantly between different authors?
+#### Does the sentiment of mental health articles vary significantly between different authors?
 
 ### Hypothesis
 
@@ -25,10 +25,10 @@ We collected articles related to mental health using the Guardian API, extractin
 
 ### Data Prep
 
-The text data was processed to lowercase, remove punctuation and digits.
+The text data was processed to lowercase, remove punctuation and digits. 
 
 ### Tokenization 
-The text was tokenized into individual words, and stop words were removed. We plot the results:
+The text was tokenized into individual words, and stop words were removed. We obtained after the first process 3.235 words. Out of the words collected we plot the word frequency per author, the results are below:
 
 **The most frequent words per author:**
 
