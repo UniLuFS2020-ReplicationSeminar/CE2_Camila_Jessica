@@ -7,7 +7,7 @@
 
 
 # Tokenization ------------------------------------------------------------
-
+library(ggplot2)
 library(tidyverse)
 library(tidytext)
 
@@ -23,6 +23,8 @@ View(stop_words)
 
 word_df <- word_df %>%
   anti_join(stop_words, by = "word")
+
+#plot words per author
 
 plot_data <- word_df %>%
   group_by(word, author) %>%
@@ -41,6 +43,8 @@ plot_data %>%
         axis.title.x = element_blank(),
         legend.position = "none")
 
+#aggregate table the most frequent word per author
+
 res <- word_df %>%
   group_by(word, author) %>%
   summarise(n = n()) %>% 
@@ -51,6 +55,17 @@ res <- word_df %>%
   arrange(desc(n))
 
 View(res)
+
+# Create a bar plot of res
+
+ggplot(res, aes(x = author, y = n, fill = word)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Most Frequent Word for Each Author",
+       x = "Author",
+       y = "Frequency",
+       fill = "Word") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
 # Wordcloud ---------------------------------------------------------------
 
