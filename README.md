@@ -1,7 +1,7 @@
 ## Repository Structure
 #### The repository is structured as follows:
 
-####1. Data: contains original data obtained from the Guardian through the Guardian API and preprocessed data (data is only locally available).
+#### 1. Data: contains original data obtained from the Guardian through the Guardian API and preprocessed data (data is only locally available).
 2. Figures: contains one histogram.
 3. scripts: contains the scripts: 
 "00_mentalhealth_articles" - contain the code with the steps of our data collection.
