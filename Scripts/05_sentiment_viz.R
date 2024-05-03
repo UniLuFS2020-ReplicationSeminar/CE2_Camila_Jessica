@@ -5,17 +5,24 @@
 # Date 03/05/2024
 # R version 4.3.1
 
-#----------- histogram for visualization
+# Histogram for visualization---------------------------------------------------------------
+
 library(ggplot2)
 
-ggplot(sentiment_analysis, aes(x=sentiment_score)) +
-  geom_histogram(bins = 50, fill="blue", color="black") +
-  ggtitle("Distribution of Sentiment Scores") +
-  xlab("Sentiment Score") +
-  ylab("Frequency")
+# Creating a new column to categorize sentiment scores
+sentiment_analysis <- sentiment_analysis %>%
+  mutate(sentiment_category = ifelse(sentiment_score >= 0, "Positive", "Negative"))
 
+# Plotting bar plot
+ggplot(sentiment_analysis, aes(x = author, y = sentiment_score, fill = sentiment_category)) +
+  geom_bar(stat = "identity", position = "identity") +
+  ggtitle("Sentiment Analysis by Author") +
+  xlab("Author") +
+  ylab("Sentiment Score") +
+  scale_fill_manual(values = c("Positive" = "blue", "Negative" = "red")) +
+  ylim(-100, 100) +  # Setting y-axis limits
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
 # Save the plot
-ggsave("histogram.png", plot = , path = "C:/Users/Jessica J. Ugowe/Desktop/CE2_Camila_Jessica/Figures", width = 10, height = 8, units = "in")
-
+ggsave("histogram.png", plot = , path = "CE2_Camila_Jessica/Figures", width = 10, height = 8, units = "in")
 
