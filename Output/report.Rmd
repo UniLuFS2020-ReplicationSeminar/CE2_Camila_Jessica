@@ -36,23 +36,39 @@ The text was tokenized into individual words, and stop words were removed. We ob
 knitr::include_graphics("/Applications/Working_Directory/IHRS/ihrs-hypothesis/CE2_Camila_Jessica/Figures/word_freq_author.png")
 ```
 
+
+
 **The word most frequent per author:**
 
 ```{r, echo=FALSE}
 knitr::include_graphics("/Applications/Working_Directory/IHRS/ihrs-hypothesis/CE2_Camila_Jessica/Figures/word_freq_author2.png")
 ```
 
-We also use Wordcloud to provide us a image of the most frequent words overall:
+
+
+**We also use Wordcloud to provide us a image of the most frequent words overall:**
 
 ```{r, echo=FALSE}
 knitr::include_graphics("/Applications/Working_Directory/IHRS/ihrs-hypothesis/CE2_Camila_Jessica/Figures/Wordcloud.png")
 ```
-## Including Plots
 
-You can also embed plots, for example:
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+
+### Sentiment Analysis
+
+We prepared for analysis by loading sentiment lexicons. Then, we calculated sentiment scores for each author based on the words used in the dataset. Finally, we printed the sentiment scores for each author.
+
+**We plot the results on histogram:**
+
+```{r, echo=FALSE}
+knitr::include_graphics("/Applications/Working_Directory/IHRS/ihrs-hypothesis/CE2_Camila_Jessica/Figures/histogram.png")
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+#### Discussion
+
+Overall, the sentiment analysis suggests that the authors generally express negative sentiments in their writing about mental health. Except for one author, all the others have negative sentiment for this subject. Further qualitative research should provide more insights for this specific topic.
+
+.
+
+
