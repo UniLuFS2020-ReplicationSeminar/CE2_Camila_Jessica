@@ -11,20 +11,20 @@
 library(tidyverse)
 library(tidytext)
 
-articles_df <- read_csv("articles_df.csv") %>% 
+articles_select <- read_csv("articles_df.csv") %>% 
   select(-article_id, -title, -body)
 
-tidy_script <- articles_df %>%
+word_df <- articles_select %>%
   unnest_tokens(output = word, input = text)
 
 # Stop Words --------------------------------------------------------------
 
 View(stop_words)
 
-tidy_script <- tidy_script %>%
+word_df <- word_df %>%
   anti_join(stop_words, by = "word")
 
-plot_data <- tidy_script %>%
+plot_data <- word_df %>%
   group_by(word, author) %>%
   summarise(n = n()) %>% 
   ungroup() %>% 
@@ -41,7 +41,7 @@ plot_data %>%
         axis.title.x = element_blank(),
         legend.position = "none")
 
-res <- tidy_script %>%
+res <- word_df %>%
   group_by(word, author) %>%
   summarise(n = n()) %>% 
   ungroup() %>% 
@@ -58,11 +58,11 @@ library(tidyverse)
 library(tidytext)
 library(wordcloud2)
 
-tidy_script <- articles_df %>% 
+word_df <- articles_df %>% 
   unnest_tokens(output = word, input = text) %>% 
   anti_join(stop_words, by ="word")
 
-plot_data <- tidy_script %>% 
+plot_data <- word_df %>% 
   filter() %>% 
   group_by(word) %>% 
   summarise(n = n()) %>% 
