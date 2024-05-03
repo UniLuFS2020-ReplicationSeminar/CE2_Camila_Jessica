@@ -8,11 +8,10 @@
 setwd("/Applications/Working_Directory/IHRS/ihrs-hypothesis/CE2_Camila_Jessica/Data/")
 source("mentalhealth_articles.R")
 
-#---------------TEXT PREPROCESSING
+# Text Preprocessing---------------------------------------------------------------
 library(dplyr)
 library(tidytext)
 
-# Combine title and body into one text column
 articles_df <- articles_df %>%
   mutate(text = paste(title, body))
 
