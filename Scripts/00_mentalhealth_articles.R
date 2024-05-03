@@ -55,3 +55,5 @@ articles_df <- map_df(data$response$results, function(article) {
   )
 }, .id = "article_id")
 
+# Save data CSV file---------------------------------------------------------
+write.csv(articles_df, "data.csv", row.names = FALSE)
