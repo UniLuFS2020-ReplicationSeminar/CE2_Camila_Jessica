@@ -1,3 +1,9 @@
+# Client: University of Lucerne
+# Project: Data Mining Class Exercise 2
+# Script: 05_sentiment_viz
+# Authors: Camila and Jessica
+# Date 03/05/2024
+# R version 4.3.1
 
 #----------- histogram for visualization
 library(ggplot2)

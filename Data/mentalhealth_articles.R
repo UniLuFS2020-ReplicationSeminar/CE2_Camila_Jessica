@@ -1,3 +1,16 @@
+# Client: University of Lucerne
+# Project: Data Mining Class Exercise 2
+# Script: Mental Health Articles
+# Authors: Camila and Jessica
+# Date 03/05/2024
+# R version 4.3.1
+
+
+rm(list = ls())
+
+install.packages(c("dplyr", "httr", "rvest", "tidyverse", "purrr"))
+
+library(dplyr)
 library(httr)
 library(rvest)
 library(tidyverse)
@@ -22,7 +35,7 @@ response <- GET(url)
 if (http_status(response)$category == "Success") {
   data <- content(response, "parsed")
   
-  # Extract fields from results
+# Extract fields from results
   articles <- map(data$response$results, function(article) {
     list(
       title = article$webTitle,
@@ -32,16 +45,12 @@ if (http_status(response)$category == "Success") {
   })
 }
   
-  # Converting list to a dataframe
-  library(dplyr)
-  
-  # If Articles is a list of lists with title, body, and author
-  articles_df <- map_df(data$response$results, function(article) {
-    data.frame(
-      title = coalesce(article$webTitle, ""),
-      body = coalesce(article$fields$body, ""),
-      author = coalesce(article$fields$byline, "")
-    )
-  }, .id = "article_id")
-  
-  
+# Converting list to a dataframe
+# If Articles is a list of lists with title, body, and author
+articles_df <- map_df(data$response$results, function(article) {
+  data.frame(
+    title = coalesce(article$webTitle, ""),
+    body = coalesce(article$fields$body, ""),
+    author = coalesce(article$fields$byline, "")
+  )
+}, .id = "article_id")

@@ -1,3 +1,9 @@
+# Client: University of Lucerne
+# Project: Data Mining Class Exercise 2
+# Script: 04_sentiment_anlys
+# Authors: Camila and Jessica
+# Date 03/05/2024
+# R version 4.3.1
 
 #------  sentiment analysis preparation
 # Load AFINN sentiment lexicon
